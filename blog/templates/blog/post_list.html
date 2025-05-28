@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi blog</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .post{
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .post h2{
+            margin-top: 0;
+        }
+        .post .date{
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'blog:post_list' %}"><h1>Bienvenido a Mi Blog</h1></a>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p class="date">Publicado el: {{ post.published_date|date:"d M Y" }} por {{ post.author.username }}</p>
+                <p>{{ post.content|truncatewords:30|linebreaks }}</p>
+                <p><a href="{% url 'blog:post_detail' pk=post.pk %}">Leer mas...</a></p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay posts publicados todavia. Vuelve pronto!!</p>
+    {% endif %}
+</body>
+</html>
