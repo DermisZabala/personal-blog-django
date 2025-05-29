@@ -1,0 +1,176 @@
+body{
+    font-family: 'Open Sans', sans-serif;; /* tipo de letra para todo el texto */
+    margin: 0; /* quita margenes por defecto del navegaro alrededor del cuerpo */
+    padding: 0; /* quita rellenos por defecto */
+    background-color: #f0f2f5; /* color de fondo gris claro para toda la pagina */
+    color: #333; /* color de texto principal (oscuro) */
+    line-height: 1.6; /* espacio entre lineas de texto para mejora legibilidad */
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Montserrat', sans-serif;
+    color: #1c1e21;
+    font-weight: 700;
+}
+
+.container{
+    max-width: 850px; /* ancho maximo del contenedor principal del contenido */
+    margin: 30px auto; /* 30px arriba/abajo, 'auto' a los lados para centrarlo */
+    padding: 25px; /* espacio interno dentro del contenedor */
+    background-color: #ffffff; /* fondo blanco para el area del contenido */
+    border-radius: 8px; /* bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07); /* sombra suave alrededor de contenedor */
+}
+
+/* ... estilo cabecera ... */
+.site-header{
+    background-color: #333;
+    color: #fff;
+    padding: 25px 0;
+    border-bottom: 3px solid #007bff;
+}
+
+.header-container{
+    background-color: #333;
+    color: #fff;
+    box-shadow: none;
+}
+
+.site-title{
+    margin: 0;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.site-title a{
+    color: #fff;
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+}
+
+.site-title a:hover{
+    color: #007bff;
+}
+
+h1 a{
+    text-decoration: none;
+    color: #1c1e21;
+}
+
+h2{
+    color: #1c1e21; /* color oscuro para los encabezados h1 y h2 */    
+}
+
+h1{
+    text-align: center; /* centra el texto del encabezado h1 */
+    margin-bottom: 30px; /* espacio debajo del h1 */
+}
+
+.post{
+    margin-bottom: 25px; /* espacio debajo de cada caja de post de la lista */
+    padding: 20px; /* espacio interno dentro de cada caja de post */
+    border: 1px solid #e0e0e0; /* borde gris claro alrededor de cada post */
+    border-radius: 6px; /* bordes redondeados para cada caja del post */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Para una transición suave */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* (una sombra base muy sutil si quieres) */
+}
+
+.post:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    transform: translateY(-5px); /* mueve la tarjeta ligeramente hacia arriba*/
+}
+
+.post h2{
+    margin-top: 0; /* quita el margen superior del h2 dentro de un .post */
+    font-size: 1.8em; /* tama;o de fuente para el titulo */
+}
+
+.post h2 a{
+    text-decoration: none; /* quita el subrayado por defecto de los enlaces */
+    color: #007bff; /* color azul para el titulo del post */
+    transition: color .3s, text-decoration 3s;
+}
+
+.post h2 a:hover{
+    text-decoration: underline; /* agrega un subrayado cuando el raton pasa por encima del titulo */
+    color: #0056b3; /* agrega un color azul mas oscuro cuando el raton pasa por encima */
+}
+
+.post-meta{
+    color: #606770; /* color gris para los metadatos */
+    font-size: 0.85em; /* tama;o de fuente mas peque;o */
+    margin-bottom: 15px; /* espacio inferior */
+    border-bottom: 1px dashed #ddd; /* dashed para linea punteada debajo */
+    padding-bottom: 10px;
+}
+
+.post-content{
+    margin-top: 15px; /* espacio arriba del contenido del post */
+}
+
+.back-link{
+    display: inline-block; /* para que padding y margin funcionen bien */
+    margin-bottom: 20px; 
+    padding: 8px 15px;
+    background-color: #e7f3ff; /* fondo azul claro */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-link a{
+    text-decoration: none;
+    color: #007bff; /* texto azul */
+    font-weight: bold;
+}
+
+.back-link:hover{ background-color: #cce5ff; }
+.back-link a:hover{ text-decoration: underline; }
+
+hr{ /* estilos para la linea horizontal <hr> */
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 25px 0;
+}
+
+.leer-mas{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e7f3ff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.leer-mas a{
+    text-decoration: none;
+    color: #007bff; /* texto azul */
+    transition: font-weight 0.3s;
+}
+
+.leer-mas:hover{ background-color: #cce5ff; }
+.leer-mas a:hover{ 
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* ... style footer ... */
+
+.site-footer-main{
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 40px;
+    border-top: 3px solid #555;
+}
+
+.site-footer-main .container{
+    background-color: #282c34;
+    color: #abb2bf;
+    box-shadow: none;
+}
+
+.site-footer-main p{
+    margin: 0;
+}

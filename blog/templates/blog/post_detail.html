@@ -1,41 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ post.title }} - Mi Blog</title>
-    <style>
-        body { 
-            font-family: sans-serif;
-            margin: 20px; 
-            background-color: #f4f4f4; 
-            line-height: 1.6; 
-        }
-        .container { 
-            max-width: 800px; 
-            margin: auto; 
-            background: #fff; 
-            padding: 20px; 
-            border-radius: 5px; 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-        }
-        h1 { color: #333; }
-        .post-meta { 
-            color: #888; 
-            font-size: 0.9em; 
-            margin-bottom: 20px; 
-        }
-        .post-content { margin-top: 20px; }
-        a { 
-            color: #3498db; 
-            text-decoration: none; 
-        }
-        a:hover { text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <p><a href="{% url 'blog:post_list' %}">Volver a la lista de posts</a></p>
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="site-title"><a href="{% url 'blog:post_list' %}">Bienvenido a Mi Blog</a></h1>
+            {# Aquí podríamos añadir un menú de navegación en el futuro #}
+            {# <nav>...</nav> #}
+        </div>
+    </header>
+    <div class="container main-content"> 
+        <p class="back-link"><a href="{% url 'blog:post_list' %}">Volver a la lista de posts</a></p>
         <hr>
 
         <h1>{{ post.title }}</h1>
@@ -48,6 +36,12 @@
             {{ post.content|linebreaks }}
         </div>
     </div>
+
+    <footer class="site-footer-main">
+        <div class="container">
+            <p>© {% now "Y" %} Mi Blog Personal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
