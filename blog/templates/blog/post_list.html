@@ -19,7 +19,11 @@
         <div class="container header-container">
             <h1 class="site-title"><a href="{% url 'blog:post_list' %}">Bienvenido a Mi Blog</a></h1>
             {# Aquí podríamos añadir un menú de navegación en el futuro #}
-            {# <nav>...</nav> #}
+            <nav class="site-nav">
+                <a href="#">Inicio</a>
+                <a href="#">Categorías</a>
+                <a href="#">Acerca de</a>
+            </nav>
         </div>
     </header>
     <div class="container main-content">        
@@ -27,11 +31,13 @@
             {% for post in posts %}
                 <div class="post">
                     <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                    <p class="post-meta">Publicado el: {{ post.published_date|date:"d M Y" }} por {{ post.author.username }}</p>
                     <div class="post-content">
                         <p>{{ post.content|truncatewords:30|linebreaks }}</p>
                     </div>
-                    <p class="leer-mas"><a href="{% url 'blog:post_detail' pk=post.pk %}">Leer mas...</a></p>
+                    <div class="post-footer">
+                        <p class="post-meta">Publicado el: {{ post.published_date|date:"d M Y" }} por {{ post.author.username }}</p>
+                        <p class="leer-mas"><a href="{% url 'blog:post_detail' pk=post.pk %}">Leer mas...</a></p>
+                    </div>
                 </div>
             {% endfor %}
         {% else %}

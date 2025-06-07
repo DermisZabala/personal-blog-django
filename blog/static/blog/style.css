@@ -24,22 +24,27 @@ h1, h2, h3, h4, h5, h6{
 
 /* ... estilo cabecera ... */
 .site-header{
-    background-color: #333;
+    background-color: #282c34;
     color: #fff;
-    padding: 25px 0;
+    padding: 15px 0;
     border-bottom: 3px solid #007bff;
 }
 
 .header-container{
-    background-color: #333;
-    color: #fff;
+    /* propiedades de flexbox */
+    display: flex;
+    justify-content: space-between; /* titulo a la izquierda, nav a la derecha */
+    align-items: center; /* centrar verticalmente los items */
+    /*  */
+    max-width: 850px;
+    margin: 0 auto; /* para centrar el contenido del header */
+    background-color: #282c34;
     box-shadow: none;
 }
 
 .site-title{
     margin: 0;
     font-size: 2.2em;
-    text-align: center;
 }
 
 .site-title a{
@@ -52,18 +57,25 @@ h1, h2, h3, h4, h5, h6{
     color: #007bff;
 }
 
+.site-nav{
+
+}
+
+.site-nav a{
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color .3s ease-in-out;
+}
+
+.site-nav a:hover {
+    color: #007bff;
+}
+
 h1 a{
     text-decoration: none;
     color: #1c1e21;
-}
-
-h2{
-    color: #1c1e21; /* color oscuro para los encabezados h1 y h2 */    
-}
-
-h1{
-    text-align: center; /* centra el texto del encabezado h1 */
-    margin-bottom: 30px; /* espacio debajo del h1 */
 }
 
 .post{
@@ -99,13 +111,23 @@ h1{
 .post-meta{
     color: #606770; /* color gris para los metadatos */
     font-size: 0.85em; /* tama;o de fuente mas peque;o */
-    margin-bottom: 15px; /* espacio inferior */
-    border-bottom: 1px dashed #ddd; /* dashed para linea punteada debajo */
-    padding-bottom: 10px;
+    /* margin-bottom: 0; espacio inferior */
+    /* border-bottom: 10px dashed #ddd; dashed para linea punteada debajo */
+    flex-shrink: 0; /* (opcional, depende del efecto deseado) */
 }
 
 .post-content{
     margin-top: 15px; /* espacio arriba del contenido del post */
+    margin-bottom: 20px;
+}
+
+.post-footer{
+    display: flex; /* convertir a flex */
+    justify-content: space-between; /* metadatos a la izqu, 'leer mas' a la derecha */
+    align-items: center; /* alinear verticalmente si tuvieran diferentes alturas */
+    border-top: 1px solid #eee; /* espacio arriba de la linea */
+    padding-top: 10px; /* espacio arriba de la linea */
+    margin-top: 15px; /* espacio entre el contenido y esta seccion */
 }
 
 .back-link{
@@ -114,6 +136,7 @@ h1{
     padding: 8px 15px;
     background-color: #e7f3ff; /* fondo azul claro */
     border-radius: 4px;
+    border: 1.5px solid #007bff;
     transition: background-color 0.3s;
 }
 
@@ -138,6 +161,7 @@ hr{ /* estilos para la linea horizontal <hr> */
     padding: 5px 10px;
     background-color: #e7f3ff;
     border-radius: 4px;
+    border: 1.5px solid #007bff;
     transition: background-color 0.3s;
 }
 
